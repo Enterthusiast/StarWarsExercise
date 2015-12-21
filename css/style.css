@@ -20,13 +20,8 @@ body {
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 	flex-direction: column;
-	width: 1024px;
+	width: 100%;
 	margin: 0 auto;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
 }
 
 p {
@@ -34,20 +29,7 @@ p {
 }
 
 .main-menu {
-	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;	/* TWEENER - IE 10 */
-	display: -webkit-flex;	/* NEW - Chrome */
-	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-	align-items: center;
-	position: fixed;
-	left: calc((100% - 1024px) / 2);
-	width: 1024px;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	background-image: url("../img/theforceawaken.png");
-	font-size: 14px;
+	display:none;
 }
 
 .main-menu-list {
@@ -78,6 +60,44 @@ p {
 	font-weight: 800;
 }
 
+/* Banner Magic: Start */
+.header-img {
+	display: none;
+}
+
+.header-img-container {
+	width: 100%;
+	height: 400px;
+	background-image: url(../img/theforceawaken.png);
+	background-size: auto 400px;
+	background-position: center;
+}
+
+.kylo-img {
+	display: none;
+}
+
+.kylo-img-container {
+	width: 100%;
+	height: 400px;
+	background-image: url(../img/mask.png);
+	background-size: auto 400px;
+	background-position: center;
+}
+
+.troopers-img {
+	display: none;
+}
+
+.troopers-img-container {
+	width: 100%;
+	height: 250px;
+	background-image: url(../img/troopers.png);
+	background-size: auto 250px;
+	background-position: center;
+}
+/* Banner Magic: End */
+
 .article-one-main {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -87,13 +107,13 @@ p {
 
 	flex-direction: row;
 	max-width: 100%;
-	padding: 5em 8.65em;
+	padding: 2em 2.5em;
 	font-size: 18px;
 }
 
 .article-one-content {
-	max-width: 60%;
-	padding-right: 3em;
+	max-width: 100%;
+	text-align: center;
 }
 
 .article-one-content a:link,
@@ -105,21 +125,13 @@ p {
 }
 
 .article-one-ad {
-	max-width: 40%;
+	display: none;
 }
-.article-one-ad-img {
-	max-width: 300px;
-	width: auto;
-	height: auto;
-}
-
 
 .article-two-main {
 	max-width: 100%;
-	padding-top: 5em;
-	padding-bottom: 3em;
-	padding-left: 8.65em;
-	padding-right: 7.1em;
+	padding: 2em 2.5em;
+	text-align: center;
 }
 
 .article-two-part1 {
@@ -129,7 +141,6 @@ p {
 .article-two-title {
 	font-size: 32px;
 	max-width: 100%;
-	padding-left: 1em;
 	padding-bottom: 1em;
 }
 
@@ -141,6 +152,7 @@ p {
 	display: -webkit-flex;	/* NEW - Chrome */
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
+	flex-wrap: wrap;
 	flex-direction: row;
 	max-width: 100%;
 	font-size: 14px;
@@ -148,9 +160,10 @@ p {
 }
 
 .article-two-picture {
-	max-width: 40%;
-	padding-right: 1em;
+	max-width: 100%;
 	padding-bottom: 1em;
+	margin-right: auto;
+	margin-left: auto;
 }
 .article-two-picture-img {
 	max-width: 300px;
@@ -158,10 +171,8 @@ p {
 	height: auto;
 }
 
-
-
 .article-two-content-part1 {
-	max-width: 60%;
+	max-width: 100%;
 }
 
 .article-two-content-part2 {
@@ -198,12 +209,11 @@ p {
 	background-image: url("../img/darthvador.png");
 	color: #9B9B9B;
 	height: 272px;
+	width: 100%;
 }
 
 .footer-bottom-copyright {
-	margin: 0 auto;
-	font-size: 14px;
-	padding-bottom: 2em;
+	display: none;
 }
 
 .footer-bottom-link {
@@ -213,17 +223,29 @@ p {
 	display: -webkit-flex;	/* NEW - Chrome */
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
+	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
-	min-width: 100%;
+	width: 100%;
 }
 
 .footer-bottom-link-legal-one,
-.footer-bottom-link-legal-two,
-.footer-bottom-link-social {
-	min-width: 33%;
+.footer-bottom-link-legal-two {
+	width: 50%;
 	text-align: center;
 	font-size: 12px;
+}
+
+.footer-bottom-link-social {
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 2em;
+}
+
+.footer-bottom-link-legal-one,
+.footer-bottom-link-legal-two {
+	padding-bottom: 3em;
 }
 
 .footer-bottom-link-legal-one-list,
@@ -235,6 +257,22 @@ p {
 .footer-bottom-link-legal-one-list,
 .footer-bottom-link-legal-two-list {
 	line-height: 30px;
+}
+
+.footer-bottom-link-social-list {
+	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;	/* TWEENER - IE 10 */
+	display: -webkit-flex;	/* NEW - Chrome */
+	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+.footer-bottom-link-social-item {
+	width: 50%;
 }
 
 .footer-bottom-link a:link,

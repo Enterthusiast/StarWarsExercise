@@ -4,8 +4,8 @@
 		<title>Star Wars Exercise</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=no/>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,800italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen, handheld" />
-		<link rel="stylesheet" type="text/css" href="css/enhanced.css" media="screen  and (min-width: 40.5em)" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (max-width: 1023px)" />
+		<link rel="stylesheet" type="text/css" href="css/enhanced.css" media="screen  and (min-width: 1024px)" />
 		<!--[if (lt IE 9)&(!IEMobile)]>
 		<link rel="stylesheet" type="text/css" href="enhanced.css" />
 		<![endif]-->
@@ -18,7 +18,7 @@
 						<a href="">Le c&ocirc;t&eacute; lumineux</a>
 					</li>
 					<li class="main-menu-item">
-						<a href="">Le c&ocirc;t&eacute; obscure</a>
+						<a href="">Le c&ocirc;t&eacute; obscur</a>
 					</li>
 					<li class="main-menu-item">
 						<a href="">L'empire</a>
@@ -39,8 +39,8 @@
 			<section>
 				<article>
 					<header>
-						<figure>
-							<img src="img/theforceawaken.png" alt="Star Wars: The Force Awaken Titre">
+						<figure class="header-img-container">
+							<img class="header-img" src="img/theforceawaken.png" alt="Star Wars: The Force Awaken Titre">
 						</figure>
 					</header>
 					<main class="article-one-main">
@@ -63,8 +63,8 @@
 			<section>
 				<article>
 					<header>
-						<figure>
-							<img src="img/mask.png" alt="Sith avec un masque métalique">
+						<figure class="kylo-img-container">
+							<img class="kylo-img" src="img/mask.png" alt="Kylo Ren">
 						</figure>
 					</header>
 					<main class="article-two-main">
@@ -105,8 +105,8 @@
 		</main>
 		<footer>
 			<section>
-				<figure>
-					<img src="img/troopers.png" alt="Armée de Stormtroopers">
+				<figure class="troopers-img-container">
+					<img class="troopers-img" src="img/troopers.png" alt="Arm&eacute;e de Stormtroopers">
 				</figure>
 			</section>
 			<section class="footer-bottom">
@@ -142,10 +142,10 @@
 					</section>
 					<section class="footer-bottom-link-social">
 						<ul class="footer-bottom-link-social-list">
-							<li>
+							<li class="footer-bottom-link-social-item">
 								<p>FOLLOW STAR WARS</p>
 							</li>
-							<li>
+							<li class="footer-bottom-link-social-item">
 							<a href=""><img src="img/facebook.png" alt="Facebook"></a>
 							<a href=""><img src="img/twitter.png" alt="Twitter"></a>
 							<a href=""><img src="img/instagram.png" alt="Instagram"></a>
@@ -154,6 +154,8 @@
 					</section>
 				</section>
 			</section>
-		</footer>	
+		</footer>
+	<script src="lib/jquery-1.11.3.js"></script>
+	<script src="js/app.js"></script>
 	</body>
 </html>
