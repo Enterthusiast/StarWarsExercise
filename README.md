@@ -7,3 +7,4 @@
 - TODO: add animations
 - TODO: add more/better comments
 - TODO: check W3C
+- TODO: fix kylo ren banner repeat
