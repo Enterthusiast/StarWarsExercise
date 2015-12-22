@@ -4,6 +4,8 @@ $(document).ready(function () {
 
 	var scrollingAd = function() {
 
+		var self = this;
+
 		var $starwarsAd = $('.article-one-ad-img');
 
 		var left = $starwarsAd.position().left.toString() + "px";
@@ -13,7 +15,8 @@ $(document).ready(function () {
 		top = top.toString() + "px";
 		var scroll;
 
-		$(window).scroll(function() {
+		// Update position depending scroll value
+		var updatePosition = function() {
 
 			scroll = $(window).scrollTop();
 
@@ -41,12 +44,30 @@ $(document).ready(function () {
 				});
 			}
 
+		}
+
+		// If resize, we need to store new coordinates
+		$(window).resize(function() {
+			// Set position back to default
+			$starwarsAd.css({
+				"position": "static",
+				"top": "0px"
+			});
+			// Get left position
+			left = $starwarsAd.position().left.toString() + "px";
+			// Update position accordingly
+			updatePosition();			
 		});
+
+		// Attach uodate position to scroll event
+		$(window).scroll(updatePosition);
 
 	}
 
+	// Execute Scrolling Ad function
 	scrollingAd();
 
+	// Toggle mobile menu
 	$('.main-menu-button').click(function() {
 		$('.main-menu').toggleClass('main-menu-show');
 		$('.main-menu-button-icon').toggle();
