@@ -28,6 +28,10 @@ p {
 	padding-bottom: 1em;
 }
 
+.main-menu-button {
+	display: none;
+}
+
 .main-menu {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -59,7 +63,6 @@ p {
 }
 
 .main-menu-item {
-	flex-direction: row;
 	margin: 0 auto;
 }
 

@@ -47,4 +47,10 @@ $(document).ready(function () {
 
 	scrollingAd();
 
+	$('.main-menu-button').click(function() {
+		$('.main-menu').toggleClass('main-menu-show');
+		$('.main-menu-button-icon').toggle();
+		$('.main-menu-button-icon-close').toggle();
+	});
+
 })
