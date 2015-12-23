@@ -64,8 +64,12 @@ $(document).ready(function () {
 
 	}
 
-	// Execute Scrolling Ad function
-	scrollingAd();
+	// Execute Scrolling Ad function after image is loaded
+	var imageAd = new Image();
+	imageAd.onload = function () {
+	   scrollingAd();
+	}
+	imageAd.src = $('.article-one-ad-img').attr("src");
 
 	// Toggle mobile menu
 	$('.main-menu-button').click(function() {
