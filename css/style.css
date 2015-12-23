@@ -4,14 +4,6 @@
 	padding: 0;
 }
 
-figure {
-	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;	/* TWEENER - IE 10 */
-	display: -webkit-flex;	/* NEW - Chrome */
-	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
-}
-
 body {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -28,32 +20,6 @@ p {
 	padding-bottom: 1em;
 }
 
-.main-menu-button {
-	position: fixed;
-	right: 5px;
-	top: 5px;
-	height: 48px;
-	width: 48px;
-	background-color: rgba(0, 0, 0, 0.7);
-	border-radius: 10px;
-	z-index: 10;
-}
-
-.main-menu-button-icon {
-	height: 100%;
-	width: 100%;
-	pointer-events: all;
-	cursor: pointer;
-}
-
-.main-menu-button-icon-close {
-	display: none;
-	height: 100%;
-	width: 100%;
-	pointer-events: all;
-	cursor: pointer;
-}
-
 .main-menu {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -63,48 +29,14 @@ p {
 
 	align-items: center;
 	position: fixed;
-	left: -1024px;
+
 	width: 100%;
-	height: 100%;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	background-image: url(../img/starsbackground.png);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0.7);
 	font-size: 14px;
 }
 
-.main-menu-show {
-	left: 0px;
-}
-
-.main-menu-list {
-	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;	/* TWEENER - IE 10 */
-	display: -webkit-flex;	/* NEW - Chrome */
-	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-	flex-direction: column;
-	
-	width: 80%;
-	height: 100%;
-	margin: 0 auto;
-	list-style-type: none;
-}
-
-.main-menu-item {
-	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;	/* TWEENER - IE 10 */
-	display: -webkit-flex;	/* NEW - Chrome */
-	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-	align-items: center;
-	justify-items: center;
-	flex: 1;
-}
-
 .main-menu-list {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -113,7 +45,7 @@ p {
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 	align-items: center;
-	width: 80%;
+	width: 1024px;
 	margin: 0 auto;
 	list-style-type: none;
 }
@@ -121,6 +53,10 @@ p {
 .main-menu-item {
 	flex-direction: row;
 	margin: 0 auto;
+}
+
+.main-menu-button {
+	display: none;
 }
 
 .main-menu a:link,
@@ -133,58 +69,6 @@ p {
 	font-weight: 800;
 }
 
-/* Banner Magic: Start */
-.header-img {
-	display: none;
-}
-
-.header-img-container {
-	width: 100%;
-	height: 500px;
-	background-image: url(../img/theforceawaken.png);
-	background-size: auto 500px;
-	background-position: center;
-}
-
-.kylo-img {
-	display: none;
-}
-
-.kylo-img-container {
-	width: 100%;
-	height: 500px;
-	background-image: url(../img/mask.png);
-	background-size: auto 500px;
-	background-position: center;
-}
-
-.troopers-img {
-	display: none;
-}
-
-.troopers-img-container {
-	width: 100%;
-	height: 250px;
-	background-image: url(../img/troopers.png);
-	background-size: auto 250px;
-	background-position: center;
-}
-
-@media screen and (max-width: 800px) {
-
-	.header-img-container {
-		height: 400px;
-		background-size: auto 400px;
-	}
-
-	.kylo-img-container {
-		height: 400px;
-		background-size: auto 400px;
-	}
-
-}
-/* Banner Magic: End */
-
 .article-one-main {
 	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
@@ -193,14 +77,15 @@ p {
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 	flex-direction: row;
-	max-width: 100%;
-	padding: 2em 2.5em;
+	max-width: 1024px;
 	font-size: 18px;
+	padding: 5em 8.65em;
+	margin: 0 auto;
 }
 
 .article-one-content {
-	max-width: 100%;
-	text-align: center;
+	max-width: 60%;
+	padding-right: 3em;
 }
 
 .article-one-content a:link,
@@ -212,13 +97,23 @@ p {
 }
 
 .article-one-ad {
-	display: none;
+	/* max-width: 40%; */
+	min-width: 300px;
+	min-height: 600px;
+}
+
+.article-one-ad-img {
+	width: 100%;
+	height: 100%;
 }
 
 .article-two-main {
-	max-width: 100%;
-	padding: 2em 2.5em;
-	text-align: center;
+	max-width: 1024px;
+	padding-top: 5em;
+	padding-bottom: 3em;
+	padding-left: 8.65em;
+	padding-right: 7.1em;
+	margin: 0 auto;
 }
 
 .article-two-part1 {
@@ -228,6 +123,7 @@ p {
 .article-two-title {
 	font-size: 32px;
 	max-width: 100%;
+	padding-left: 1em;
 	padding-bottom: 1em;
 }
 
@@ -239,7 +135,6 @@ p {
 	display: -webkit-flex;	/* NEW - Chrome */
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
-	flex-wrap: wrap;
 	flex-direction: row;
 	max-width: 100%;
 	font-size: 14px;
@@ -247,11 +142,11 @@ p {
 }
 
 .article-two-picture {
-	max-width: 100%;
+	max-width: 40%;
+	padding-right: 1em;
 	padding-bottom: 1em;
-	margin-right: auto;
-	margin-left: auto;
 }
+
 .article-two-picture-img {
 	max-width: 300px;
 	width: auto;
@@ -259,11 +154,7 @@ p {
 }
 
 .article-two-content-part1 {
-	max-width: 100%;
-}
-
-.article-two-content-part2 {
-
+	max-width: 60%;
 }
 
 .article-two-content-part1,
@@ -293,14 +184,19 @@ p {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../img/darthvador.png");
+	background-image: url(../img/darthvador.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	color: #9B9B9B;
 	height: 272px;
 	width: 100%;
 }
 
 .footer-bottom-copyright {
-	display: none;
+	margin: 0 auto;
+	font-size: 14px;
+	padding-bottom: 2em;
 }
 
 .footer-bottom-link {
@@ -310,29 +206,17 @@ p {
 	display: -webkit-flex;	/* NEW - Chrome */
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
-	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 	width: 100%;
 }
 
 .footer-bottom-link-legal-one,
-.footer-bottom-link-legal-two {
-	width: 50%;
-	text-align: center;
-	font-size: 12px;
-}
-
+.footer-bottom-link-legal-two,
 .footer-bottom-link-social {
-	width: 100%;
+	min-width: 33%;
 	text-align: center;
 	font-size: 12px;
-	padding-top: 2em;
-}
-
-.footer-bottom-link-legal-one,
-.footer-bottom-link-legal-two {
-	padding-bottom: 3em;
 }
 
 .footer-bottom-link-legal-one-list,
@@ -346,26 +230,193 @@ p {
 	line-height: 30px;
 }
 
-.footer-bottom-link-social-list {
-	display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;	/* TWEENER - IE 10 */
-	display: -webkit-flex;	/* NEW - Chrome */
-	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-	flex-direction: row;
-	align-items: center;
-	width: 100%;
-}
-
-.footer-bottom-link-social-item {
-	width: 50%;
-}
-
 .footer-bottom-link a:link,
 .footer-bottom-link a:visited,
 .footer-bottom-link a:hover,
 .footer-bottom-link a:active {
 	color: #9B9B9B;
 	text-decoration: underline;
+}
+
+/* Banner Magic: Start */
+.header-img-container {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background-image: url(../img/theforceawaken.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.kylo-img-container {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background-image: url(../img/mask.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.troopers-img-container {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	background-image: url(../img/troopers.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+
+	.header-img-container {
+		height: 400px;
+		overflow: hidden;
+	}
+
+	.kylo-img-container {
+		height: 400px;
+		overflow: hidden;
+	}
+
+}
+/* Banner Magic: End */
+
+@media screen and (max-width: 1023px) {
+
+	.main-menu-button {
+		display: inline;
+		position: fixed;
+		right: 5px;
+		top: 5px;
+		height: 48px;
+		width: 48px;
+		background-color: rgba(0, 0, 0, 0.7);
+		border-radius: 10px;
+		z-index: 10;
+	}
+
+	.main-menu-button-icon {
+		height: 100%;
+		width: 100%;
+		pointer-events: all;
+		cursor: pointer;
+	}
+
+	.main-menu-button-icon-close {
+		display: none;
+		height: 100%;
+		width: 100%;
+		pointer-events: all;
+		cursor: pointer;
+	}
+
+	.main-menu {
+		left: -1024px;
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/starsbackground.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.main-menu-show {
+		left: 0px;
+	}
+
+	.main-menu-list {
+		flex-direction: column;
+		
+		width: 80%;
+		height: 100%;
+	}
+
+	.main-menu-item {
+		display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;	/* TWEENER - IE 10 */
+		display: -webkit-flex;	/* NEW - Chrome */
+		display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		align-items: center;
+		justify-items: center;
+		flex: 1;
+	}
+
+	.article-one-main {
+		max-width: 100%;
+		padding: 2em 2.5em;
+	}
+
+	.article-one-content {
+		max-width: 100%;
+		text-align: center;
+		padding: 0;
+	}
+
+	.article-one-ad {
+		display: none;
+	}
+
+	.article-two-main {
+		padding: 2em 2.5em;
+		text-align: center;
+	}
+
+	.article-two-title {
+		padding-left: 0;
+	}
+
+	.article-two-part2,
+	.article-two-part3 {
+		flex-wrap: wrap;
+	}
+
+	.article-two-picture {
+		max-width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.article-two-content-part1 {
+		max-width: 100%;
+	}
+
+	.footer-bottom-copyright {
+		display: none;
+	}
+
+	.footer-bottom-link {
+		flex-wrap: wrap;
+	}
+
+	.footer-bottom-link-legal-one,
+	.footer-bottom-link-legal-two {
+		width: 50%;
+		padding-bottom: 3em;
+	}
+
+	.footer-bottom-link-social {
+		width: 100%;
+		padding-top: 2em;
+	}
+
+	.footer-bottom-link-social-list {
+		display: -webkit-box;	/* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;		/* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;	/* TWEENER - IE 10 */
+		display: -webkit-flex;	/* NEW - Chrome */
+		display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+	}
+
+	.footer-bottom-link-social-item {
+		width: 50%;
+	}
+
 }
