@@ -134,20 +134,13 @@ p {
 }
 
 /* Banner Magic: Start */
-.header-img {
-	display: none;
-}
-
 .header-img-container {
 	width: 100%;
 	height: 500px;
 	background-image: url(../img/theforceawaken.png);
 	background-size: auto 500px;
 	background-position: center;
-}
-
-.kylo-img {
-	display: none;
+	background-repeat: no-repeat;
 }
 
 .kylo-img-container {
@@ -156,10 +149,7 @@ p {
 	background-image: url(../img/mask.png);
 	background-size: auto 500px;
 	background-position: center;
-}
-
-.troopers-img {
-	display: none;
+	background-repeat: no-repeat;
 }
 
 .troopers-img-container {
@@ -168,6 +158,7 @@ p {
 	background-image: url(../img/troopers.png);
 	background-size: auto 250px;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 800px) {
