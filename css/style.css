@@ -29,8 +29,8 @@ p {
 
 	align-items: center;
 	position: fixed;
-	left: calc((100% - 1024px) / 2);
-	width: 1024px;
+
+	width: 100%;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -77,13 +77,14 @@ p {
 	display: flex;			/* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 	flex-direction: row;
-	max-width: 100%;
-	padding: 5em 8.65em;
+	max-width: 1024px;
 	font-size: 18px;
+	padding: 5em 8.65em;
+	margin: 0 auto;
 }
 
 .article-one-content {
-	width: 60%;
+	max-width: 60%;
 	padding-right: 3em;
 }
 
@@ -96,7 +97,9 @@ p {
 }
 
 .article-one-ad {
-	width: 40%;
+	/* max-width: 40%; */
+	min-width: 300px;
+	min-height: 600px;
 }
 
 .article-one-ad-img {
@@ -105,11 +108,12 @@ p {
 }
 
 .article-two-main {
-	max-width: 100%;
+	max-width: 1024px;
 	padding-top: 5em;
 	padding-bottom: 3em;
 	padding-left: 8.65em;
 	padding-right: 7.1em;
+	margin: 0 auto;
 }
 
 .article-two-part1 {
@@ -180,7 +184,10 @@ p {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../img/darthvador.png");
+	background-image: url(../img/darthvador.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	color: #9B9B9B;
 	height: 272px;
 	width: 100%;
@@ -235,8 +242,9 @@ p {
 .header-img-container {
 	width: 100%;
 	height: 500px;
+	overflow: hidden;
 	background-image: url(../img/theforceawaken.png);
-	background-size: auto 500px;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -244,8 +252,9 @@ p {
 .kylo-img-container {
 	width: 100%;
 	height: 500px;
+	overflow: hidden;
 	background-image: url(../img/mask.png);
-	background-size: auto 500px;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -253,8 +262,9 @@ p {
 .troopers-img-container {
 	width: 100%;
 	height: 250px;
+	overflow: hidden;
 	background-image: url(../img/troopers.png);
-	background-size: auto 250px;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -263,12 +273,12 @@ p {
 
 	.header-img-container {
 		height: 400px;
-		background-size: auto 400px;
+		overflow: hidden;
 	}
 
 	.kylo-img-container {
 		height: 400px;
-		background-size: auto 400px;
+		overflow: hidden;
 	}
 
 }
@@ -308,7 +318,7 @@ p {
 		width: 100%;
 		height: 100%;
 		background-image: url(../img/starsbackground.png);
-		background-size: 100% 100%;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 
@@ -336,12 +346,14 @@ p {
 	}
 
 	.article-one-main {
+		max-width: 100%;
 		padding: 2em 2.5em;
 	}
 
 	.article-one-content {
-		width: 100%;
+		max-width: 100%;
 		text-align: center;
+		padding: 0;
 	}
 
 	.article-one-ad {

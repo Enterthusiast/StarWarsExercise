@@ -9,20 +9,37 @@ $(document).ready(function () {
 		var self = this;
 
 		var $starwarsAd = $('.article-one-ad-img');
+		var $contentBound = $('.article-one-ad');
 
-		var left = $starwarsAd.position().left.toString() + 'px';
-		var width = $starwarsAd.width().toString() + 'px';
-		var height = $starwarsAd.height().toString() + 'px';
-		var top = 1125 - $starwarsAd.height();
-		top = top.toString() + 'px';
+		// Fixed value
+		var width = '300px';
+		var height = '600px';
+
+		// Layout dependent values
+		var left;
+		var top;
+		var start;
+		var stop;
 		var scroll;
+
+		// Update layout dependant values
+		var updateAnchor = function () {
+
+			left = $starwarsAd.position().left.toString() + 'px';
+			top = $contentBound.height() - $starwarsAd.height() + 'px';
+			start = $contentBound.position().top - 75;
+			stop = $contentBound.position().top + $contentBound.height() - $starwarsAd.height();
+
+		}
 
 		// Update position depending scroll value
 		var updatePosition = function() {
 
+			updateAnchor();
+
 			scroll = $(window).scrollTop();
 
-			if(scroll > 525 && scroll < 1125 && $starwarsAd.css('top') !== '75px') {
+			if(scroll > start && scroll < stop && $starwarsAd.css('top') !== '75px') {
 				$starwarsAd.css({
 					'position': 'fixed',
 					'top': '75px',
@@ -30,12 +47,12 @@ $(document).ready(function () {
 					'width': width,
 					'height': height,
 				});
-			} else if(scroll < 525 && $starwarsAd.css('top') !== '0px') {
+			} else if(scroll < start && $starwarsAd.css('top') !== '0px') {
 				$starwarsAd.css({
 					'position': 'static',
 					'top': '0px'
 				});
-			} else if(scroll >= 1125 && $starwarsAd.css('position') !== 'relative') {
+			} else if(scroll >= stop && $starwarsAd.css('position') !== 'relative') {
 				$starwarsAd.css({
 					'position': 'relative',
 					'top': top,

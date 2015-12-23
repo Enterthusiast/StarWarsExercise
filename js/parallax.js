@@ -134,12 +134,10 @@ parallaxBackground.prototype.initialize = function () {
 };
 parallaxBackground.prototype.updatePosition = function() {
 
-    console.log('update', this);
-
     if(this.$background.visible(true)) {
         window.requestAnimationFrame(function(self) { return function() {
 
-            self.$background.css('background-size', 'auto' + ' ' + (self.$background.height()+self.$background.height()*self.scrollFactor) + 'px');
+            self.$background.css('background-size', 'cover');
             self.$background.css('background-position', self.customizedXPosition + ' ' + 'calc(50% + ' + (self.$background.offset().top-$(window).scrollTop())*self.scrollFactor + 'px)');
             
         }; }(this));
