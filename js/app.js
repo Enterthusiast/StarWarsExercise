@@ -2,8 +2,77 @@
 
 $(document).ready(function () {
 
+	// Star Wars Animation
+	var starwarsAnim = function(jqueryString) {
 
-	//Scrolling Ad function
+		setTimeout(function() {
+
+			// Easter Egg on click
+			$('.article-one-main').click(function() {
+
+				// Check resolution
+				if($(window).width() >= 1024) {
+					var $animatedEl = $(jqueryString);
+
+					// Prevent element resize during animation (reset style if required)
+					if($animatedEl.attr('style') === '' || $animatedEl.attr('style') === undefined) {
+						$animatedEl.css({
+							'height': $animatedEl.height()
+						});
+					} else {
+						$animatedEl.attr('style','');
+					}
+
+					// Aplly additional style to start the anmiation (reset styles if required)
+					$(jqueryString + ' .animation-container').toggleClass('scroll-up-container');
+
+					console.log($(jqueryString + ' .animation-container').attr('style'));
+					if($(jqueryString + ' .animation-container').attr('style') === '' ||
+						$(jqueryString + ' .animation-container').attr('style') === undefined) {
+						$(jqueryString + ' .animation-container').css({
+							'width': $animatedEl.width(),
+							'height': $animatedEl.height()
+						});
+					} else {
+						$(jqueryString + ' .animation-container').attr('style','');
+					}
+
+					if($(jqueryString + ' .animation-container a').attr('style') === '' ||
+						$(jqueryString + ' .animation-container a').attr('style') === undefined) {
+						$(jqueryString + ' .animation-container a').css({
+							'color': 'yellow'
+						});
+					} else {
+						$(jqueryString + ' .animation-container a').attr('style','');
+					}
+
+					$(jqueryString + ' .animation-shape').toggleClass('scroll-up-shape');
+					$(jqueryString + ' .animation-text').toggleClass('scroll-up-text');
+
+					// Clean up styles after animation completed
+					$animatedEl.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+
+						$animatedEl.attr('style','');
+						$(jqueryString + ' .animation-container').attr('style','');
+						$(jqueryString + ' .animation-container a').attr('style','');
+						$(jqueryString + ' .animation-container').removeClass('scroll-up-container');
+						$(jqueryString + ' .animation-shape').removeClass('scroll-up-shape');
+						$(jqueryString + ' .animation-text').removeClass('scroll-up-text');
+
+					});
+
+				}
+
+			});
+
+		}, 500);
+
+	}
+
+	// Attach animation
+	$('.article-one-main').load(starwarsAnim('.article-one-content'));
+
+	// Scrolling Ad function
 	var scrollingAd = function() {
 
 		var self = this;
@@ -96,6 +165,7 @@ $(document).ready(function () {
 	// Toggle mobile menu
 	$('.main-menu-button').click(function() {
 		$('.main-menu').toggleClass('main-menu-show');
+		$('.main-menu').toggleClass('main-menu-hide');
 		$('.main-menu-button-icon').toggle();
 		$('.main-menu-button-icon-close').toggle();
 	});
