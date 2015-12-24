@@ -321,11 +321,18 @@ p {
 	width: 100%;
 	height: 500px;
 	overflow: hidden;
-	background-image: url(../img/theforceawaken.png);
+	background-image: url(../img/starsbackground.png);
 	background-size: cover;
 	background-position: center;
-	/* background-repeat: no-repeat; */
-	background-color: #FFFFFF;
+}
+
+.header-img-title-container {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background-image: url(../img/title.png);
+	background-size: cover;
+	background-position: center;
 }
 
 .kylo-img-container {
@@ -335,8 +342,6 @@ p {
 	background-image: url(../img/mask.png);
 	background-size: cover;
 	background-position: center;
-	/* background-repeat: no-repeat; */
-	background-color: #FFFFFF;
 }
 
 .troopers-img-container {
@@ -346,15 +351,18 @@ p {
 	background-image: url(../img/troopers.png);
 	background-size: cover;
 	background-position: center;
-	/* background-repeat: no-repeat; */
-	background-color: #FFFFFF;
 }
 
 @media screen and (max-width: 375px) {
 
 	.header-img-container {
 		height: 225px;
-		background-image: url(../img/theforceawaken225.png);
+		background-image: url(../img/starsbackground225.png);
+	}
+
+	.header-img-title-container {
+		height: 225px;
+		background-image: url(../img/title225.png);
 	}
 
 	.kylo-img-container {
@@ -373,7 +381,12 @@ p {
 
 	.header-img-container {
 		height: 275px;
-		background-image: url(../img/theforceawaken275.png);
+		background-image: url(../img/starsbackground275.png);
+	}
+
+	.header-img-title-container {
+		height: 275px;
+		background-image: url(../img/title275.png);
 	}
 
 	.kylo-img-container {
@@ -392,7 +405,12 @@ p {
 
 	.header-img-container {
 		height: 350px;
-		background-image: url(../img/theforceawaken350.png);
+		background-image: url(../img/starsbackground350.png);
+	}
+
+	.header-img-title-container {
+		height: 350px;
+		background-image: url(../img/title350.png);
 	}
 
 	.kylo-img-container {
@@ -411,7 +429,12 @@ p {
 
 	.header-img-container {
 		height: 400px;
-		background-image: url(../img/theforceawaken400.png);
+		background-image: url(../img/starsbackground400.png);
+	}
+
+	.header-img-title-container {
+		height: 400px;
+		background-image: url(../img/title400.png);
 	}
 
 	.kylo-img-container {
