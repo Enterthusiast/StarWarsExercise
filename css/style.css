@@ -83,6 +83,12 @@ p {
 	margin: 0 auto;
 }
 
+.article-one-title {
+	font-size: 18px;
+	font-weight: bold;
+	padding-bottom: 1em;
+}
+
 .article-one-content {
 	max-width: 60%;
 	padding-right: 3em;
@@ -245,8 +251,8 @@ p {
 	background-image: url(../img/theforceawaken.png);
 	background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat;
-	background-color: #000000;
+	/* background-repeat: no-repeat; */
+	background-color: #FFFFFF;
 }
 
 .kylo-img-container {
@@ -254,10 +260,10 @@ p {
 	height: 500px;
 	overflow: hidden;
 	background-image: url(../img/mask.png);
-	background-size: cover;
+	background-size: auto 1000px;
 	background-position: center;
-	background-repeat: no-repeat;
-	background-color: #000000;
+	/* background-repeat: no-repeat; */
+	background-color: #FFFFFF;
 }
 
 .troopers-img-container {
@@ -267,8 +273,8 @@ p {
 	background-image: url(../img/troopers.png);
 	background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat;
-	background-color: #000000;
+	/* background-repeat: no-repeat; */
+	background-color: #FFFFFF;
 }
 
 @media screen and (max-width: 375px) {
