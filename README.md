@@ -1,6 +1,5 @@
 # StarWarsExercise
 
-- TODO: different background size for quicker loading in @media queries
-- TODO: check W3C
-- TODO: improve parallax
+- TODO: improve parallax, better fitted img, stronger effect on mobile (ie hight document)
 - TODO: improve easter egg animation
+- TODO: merge js file, could be better at loading

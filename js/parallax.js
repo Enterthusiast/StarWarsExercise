@@ -57,19 +57,23 @@ parallaxBackground.prototype.initialize = function () {
 };
 parallaxBackground.prototype.updatePosition = function() {
 
-        // parallax percent calculation
-        var parallaxPercent = $(window).scrollTop() / ($(document).height() - $(window).height());
-        parallaxPercent = 50 - parallaxPercent*100/2;
+        // The background is visible
+        if($(document).scrollTop()+$(window).height() >= this.$background.offset().top)
+        {
+            // parallax percent calculation, based on the background position on document
+            var parallaxPercent = ($(document).scrollTop()-this.$background.offset().top) / $(document).height();
+            // parallax pixel that will be used to change the backgroudn position
+            // proportional to the image height
+            var parallaxPx = parallaxPercent * this.$background.height();
+        }
 
         // change position
         window.requestAnimationFrame(function(self) { return function() {
 
-            self.$background.css('background-position', self.customizedXPosition + ' ' + parallaxPercent + '%');
+            self.$background.css('background-position', self.customizedXPosition + ' ' + parallaxPx + 'px');
 
         }; }(this));
 
 }
 
 new parallaxBackground('.header-img-container');
-new parallaxBackground('.kylo-img-container');
-new parallaxBackground('.troopers-img-container');
