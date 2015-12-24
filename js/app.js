@@ -8,7 +8,7 @@ $(document).ready(function () {
 		setTimeout(function() {
 
 			// Easter Egg on click
-			$('.article-one-main').click(function() {
+			$('.article-one-main').dblclick(function() {
 
 				// Check resolution
 				if($(window).width() >= 1007) {
@@ -26,7 +26,6 @@ $(document).ready(function () {
 					// Aplly additional style to start the anmiation (reset styles if required)
 					$(jqueryString + ' .animation-container').toggleClass('scroll-up-container');
 
-					console.log($(jqueryString + ' .animation-container').attr('style'));
 					if($(jqueryString + ' .animation-container').attr('style') === '' ||
 						$(jqueryString + ' .animation-container').attr('style') === undefined) {
 						$(jqueryString + ' .animation-container').css({
