@@ -27,6 +27,7 @@ p {
 	overflow: hidden;
 	position: relative;
 	background-color: black;
+	background-image: url(../img/starsbackground.png);
 	z-index: -1;
 }
 

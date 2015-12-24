@@ -11,7 +11,7 @@ $(document).ready(function () {
 			$('.article-one-main').click(function() {
 
 				// Check resolution
-				if($(window).width() >= 1024) {
+				if($(window).width() >= 1007) {
 					var $animatedEl = $(jqueryString);
 
 					// Prevent element resize during animation (reset style if required)
