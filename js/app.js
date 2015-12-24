@@ -28,42 +28,44 @@ $(document).ready(function () {
 			left = $starwarsAd.position().left.toString() + 'px';
 			top = $contentBound.height() - $starwarsAd.height() + 'px';
 			start = $contentBound.position().top - 75;
-			stop = $contentBound.position().top + $contentBound.height() - $starwarsAd.height();
+			stop = start + $contentBound.height() - $starwarsAd.height();
 
-		}
+		};
 
 		// Update position depending scroll value
 		var updatePosition = function() {
 
-			updateAnchor();
+			if($('.article-one-ad').css('display') !== 'none') {
+				updateAnchor();
 
-			scroll = $(window).scrollTop();
+				scroll = $(window).scrollTop();
 
-			if(scroll > start && scroll < stop && $starwarsAd.css('top') !== '75px') {
-				$starwarsAd.css({
-					'position': 'fixed',
-					'top': '75px',
-					'left': left,
-					'width': width,
-					'height': height,
-				});
-			} else if(scroll < start && $starwarsAd.css('top') !== '0px') {
-				$starwarsAd.css({
-					'position': 'static',
-					'top': '0px'
-				});
-			} else if(scroll >= stop && $starwarsAd.css('position') !== 'relative') {
-				$starwarsAd.css({
-					'position': 'relative',
-					'top': top,
-					'left': 0,
-					'width': width,
-					'height': height,
-					'z-index': '-1'
-				});
+				if(scroll > start && scroll < stop && $starwarsAd.css('top') !== '75px') {
+					$starwarsAd.css({
+						'position': 'fixed',
+						'top': '75px',
+						'left': left,
+						'width': width,
+						'height': height,
+					});
+				} else if(scroll < start && $starwarsAd.css('top') !== '0px') {
+					$starwarsAd.css({
+						'position': 'static',
+						'top': '0px'
+					});
+				} else if(scroll >= stop && $starwarsAd.css('top') !== top) {
+					$starwarsAd.css({
+						'position': 'relative',
+						'top': top,
+						'left': 0,
+						'width': width,
+						'height': height,
+						'z-index': '-1'
+					});
+				}
 			}
 
-		}
+		};
 
 		// If resize, we need to store new coordinates
 		$(window).resize(function() {
@@ -78,17 +80,18 @@ $(document).ready(function () {
 			updatePosition();			
 		});
 
-		// Attach uodate position to scroll event
+		// Attach update position to scroll event
 		$(window).scroll(updatePosition);
 
-	}
+		// Execute first update, timeout added as a workaround
+		// Because stop and top values are not good even after
+		// waiting for the image and/or the whole article to load
+		setTimeout(updatePosition, 500);
+
+	};
 
 	// Execute Scrolling Ad function after image is loaded
-	var imageAd = new Image();
-	imageAd.onload = function () {
-	   scrollingAd();
-	}
-	imageAd.src = $('.article-one-ad-img').attr('src');
+ 	$('.article-one-ad-img').load(scrollingAd());
 
 	// Toggle mobile menu
 	$('.main-menu-button').click(function() {
@@ -97,4 +100,4 @@ $(document).ready(function () {
 		$('.main-menu-button-icon-close').toggle();
 	});
 
-})
+});
