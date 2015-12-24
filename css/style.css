@@ -333,7 +333,6 @@ p {
 	height: 500px;
 	overflow: hidden;
 	background-image: url(../img/mask.png);
-	background-size: auto 1000px;
 	background-position: center;
 	/* background-repeat: no-repeat; */
 	background-color: #FFFFFF;
@@ -354,14 +353,17 @@ p {
 
 	.header-img-container {
 		height: 225px;
+		background-image: url(../img/theforceawaken225.png);
 	}
 
 	.kylo-img-container {
 		height: 225px;
+		background-image: url(../img/mask225.png);
 	}
 
 	.troopers-img-container {
 		height: 100px;
+		background-image: url(../img/troopers100.png);
 	}
 
 }
@@ -370,14 +372,17 @@ p {
 
 	.header-img-container {
 		height: 275px;
+		background-image: url(../img/theforceawaken275.png);
 	}
 
 	.kylo-img-container {
 		height: 275px;
+		background-image: url(../img/mask275.png);
 	}
 
 	.troopers-img-container {
 		height: 125px;
+		background-image: url(../img/troopers125.png);
 	}
 
 }
@@ -386,14 +391,17 @@ p {
 
 	.header-img-container {
 		height: 350px;
+		background-image: url(../img/theforceawaken350.png);
 	}
 
 	.kylo-img-container {
 		height: 350px;
+		background-image: url(../img/mask350.png);
 	}
 
 	.troopers-img-container {
 		height: 150px;
+		background-image: url(../img/troopers150.png);
 	}
 
 }
@@ -402,14 +410,17 @@ p {
 
 	.header-img-container {
 		height: 400px;
+		background-image: url(../img/theforceawaken400.png);
 	}
 
 	.kylo-img-container {
 		height: 400px;
+		background-image: url(../img/mask400.png);
 	}
 
 	.troopers-img-container {
 		height: 175px;
+		background-image: url(../img/troopers175.png);
 	}
 
 }
