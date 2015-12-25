@@ -169,4 +169,7 @@ $(document).ready(function () {
 		$('.main-menu-button-icon-close').toggle();
 	});
 
+	// Add parallax to header
+	$('.header-img-container').parallaxBackground();
+
 });

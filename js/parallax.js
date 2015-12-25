@@ -27,53 +27,54 @@
 	};
 }());
 
-// Apply parallax effect to a jquery selected background
-// Dependencies: jquery & RequestAnimationFrame
-// Built as a prototype class for the sake of this exercise
-var parallaxBackground = function(jqueryString, customizedXPosition) {
+(function ( $ ) {
 
-	this.jqueryString = jqueryString;
-	this.customizedXPosition = customizedXPosition;
-    this.$background;
+    // Apply parallax effect to a jquery selected background
+    // Dependencies: jquery & RequestAnimationFrame
+    // Built as a prototype class for the sake of this exercise
+    $.fn.parallaxBackground = function(customizedXPosition) {
 
-	this.initialize();
+    	this.customizedXPosition = customizedXPosition;
+        this.$background = this;
 
-};
-parallaxBackground.prototype.initialize = function () {
+        this.initialize = function () {
 
-    if(typeof this.customizedXPosition !== 'string') {
-        // set default x position value
-        this.customizedXPosition = '50%';
-    }
+            if(typeof this.customizedXPosition !== 'string') {
+                // set default x position value
+                this.customizedXPosition = '50%';
+            }
 
-    if(typeof this.jqueryString === 'string') {
-        this.$background = $(this.jqueryString);
-        $(window).scroll(function(self) { return function() { self.updatePosition(); }; }(this));
-        $(window).resize(function(self) { return function() { self.updatePosition(); }; }(this));
-    } else {
-        console.log('parallaxBackground Error: jquery request is not a string');
-    }
+            // Attach events
+            $(window).scroll(function(self) { return function() { self.updatePosition(); }; }(this));
+            $(window).resize(function(self) { return function() { self.updatePosition(); }; }(this));
 
-};
-parallaxBackground.prototype.updatePosition = function() {
+        };
 
-        // The background is visible
-        if($(document).scrollTop()+$(window).height() >= this.$background.offset().top)
-        {
-            // parallax percent calculation, based on the background position on document
-            var parallaxPercent = ($(document).scrollTop()-this.$background.offset().top) / $(document).height();
-            // parallax pixel that will be used to change the backgroudn position
-            // proportional to the image height
-            var parallaxPx = parallaxPercent * this.$background.height();
+        this.updatePosition = function() {
+
+                // The background is visible
+                if($(document).scrollTop()+$(window).height() >= this.$background.offset().top)
+                {
+                    // parallax percent calculation, based on the background position on document
+                    var parallaxPercent = ($(document).scrollTop()-this.$background.offset().top) / $(document).height();
+                    // parallax pixel that will be used to change the backgroudn position
+                    // proportional to the image height
+                    var parallaxPx = parallaxPercent * this.$background.height();
+                }
+
+                // change position
+                window.requestAnimationFrame(function(self) { return function() {
+
+                    self.$background.css('background-position', self.customizedXPosition + ' ' + parallaxPx + 'px');
+
+                }; }(this));
+
         }
 
-        // change position
-        window.requestAnimationFrame(function(self) { return function() {
+    	this.initialize();
 
-            self.$background.css('background-position', self.customizedXPosition + ' ' + parallaxPx + 'px');
+        return this;
 
-        }; }(this));
+    };
 
-}
-
-new parallaxBackground('.header-img-container');
+}( jQuery ));
