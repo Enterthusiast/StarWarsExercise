@@ -31,7 +31,7 @@
 
     // Apply parallax effect to a jquery selected background
     // Dependencies: jquery & RequestAnimationFrame
-    // Built as a prototype class for the sake of this exercise
+    // Built as a jquery plugin for the sake of this exercise
     $.fn.parallaxBackground = function(customizedXPosition) {
 
     	this.customizedXPosition = customizedXPosition;
